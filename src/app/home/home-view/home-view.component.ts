@@ -1,21 +1,21 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 import {
   Component,
   Input,
   OnChanges,
   OnInit,
   SimpleChanges,
-} from "@angular/core";
-import { MatCardModule } from "@angular/material/card";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { MatTabsModule } from "@angular/material/tabs";
-import { CourseDialogComponent } from "../../course-dialog/course-dialog.component";
-import { Course } from "../../model/course";
+} from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
+import { CourseDialogComponent } from '../../course-dialog/course-dialog.component';
+import { Course } from '../../model/course';
 
 @Component({
-  selector: "home-view",
-  templateUrl: "./home-view.component.html",
-  styleUrls: ["./home-view.component.scss"],
+  selector: 'home-view',
+  templateUrl: './home-view.component.html',
+  styleUrls: ['./home-view.component.scss'],
   standalone: true,
   imports: [MatTabsModule, CommonModule, MatCardModule],
 })
@@ -38,7 +38,7 @@ export class HomeViewComponent implements OnInit, OnChanges {
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.width = "400px";
+    dialogConfig.width = '400px';
 
     dialogConfig.data = course;
 

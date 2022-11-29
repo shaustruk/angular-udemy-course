@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { Course, sortCoursesBySeqNo } from "../model/course";
-import { interval, noop, Observable, of, throwError, timer } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { Course, sortCoursesBySeqNo } from '../model/course';
+import { interval, noop, Observable, of, throwError, timer } from 'rxjs';
 import {
   catchError,
   delay,
@@ -11,21 +11,21 @@ import {
   retryWhen,
   shareReplay,
   tap,
-} from "rxjs/operators";
-import { HttpClient } from "@angular/common/http";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { CourseDialogComponent } from "../course-dialog/course-dialog.component";
-import { RouterModule } from "@angular/router";
-import { CommonModule } from "@angular/common";
-import { MatTabsModule } from "@angular/material/tabs";
-import { MatCardModule } from "@angular/material/card";
-import { CourseService } from "../services/course.service";
-import { HomeViewComponent } from "./home-view/home-view.component";
+} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { CourseDialogComponent } from '../course-dialog/course-dialog.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { CourseService } from '../services/course.service';
+import { HomeViewComponent } from './home-view/home-view.component';
 
 @Component({
-  selector: "home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"],
+  selector: 'home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
   standalone: true,
   imports: [
     RouterModule,
@@ -46,11 +46,11 @@ export class HomeComponent implements OnInit {
     const courses$: Observable<Course[]> = this.courseService.loadCourses();
 
     this.beginnerCourses$ = courses$.pipe(
-      map((data) => data.filter((course) => course.category == "BEGINNER"))
+      map((data) => data.filter((course) => course.category == 'BEGINNER'))
     );
 
     this.advancedCourses$ = courses$.pipe(
-      map((data) => data.filter((course) => course.category == "ADVANCED"))
+      map((data) => data.filter((course) => course.category == 'ADVANCED'))
     );
   }
 }

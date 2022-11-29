@@ -1,46 +1,46 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
-import { CourseComponent } from "./course/course.component";
-import { LoginComponent } from "./login/login.component";
-import { SearchLessonsComponent } from "./search-lessons/search-lessons.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { CourseComponent } from './course/course.component';
+import { LoginComponent } from './login/login.component';
+import { SearchLessonsComponent } from './search-lessons/search-lessons.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     loadComponent: () =>
-      import("./home/home.component").then((m) => m.HomeComponent),
-    title: "Lessons",
+      import('./home/home.component').then((m) => m.HomeComponent),
+    title: 'Lessons',
   },
   {
-    path: "search-lessons",
+    path: 'search-lessons',
     component: SearchLessonsComponent,
-    title: "Search page",
+    title: 'Search page',
   },
   {
-    path: "about",
+    path: 'about',
     component: AboutComponent,
-    title: "About",
+    title: 'About',
   },
   {
-    path: "courses/:courseId",
+    path: 'courses/:courseId',
     component: CourseComponent,
-    title: "Current Course",
+    title: 'Current Course',
   },
   {
-    path: "login",
+    path: 'login',
     component: LoginComponent,
-    title: "Registation",
+    title: 'Registation',
   },
   {
-    path: "**",
-    redirectTo: "/",
+    path: '**',
+    redirectTo: '/',
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

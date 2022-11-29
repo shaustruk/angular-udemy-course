@@ -6,18 +6,18 @@ import {
   OnInit,
   ViewChild,
   ViewEncapsulation,
-} from "@angular/core";
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { Course } from "../model/course";
-import { FormBuilder, Validators, FormGroup } from "@angular/forms";
-import * as moment from "moment";
-import { catchError } from "rxjs/operators";
-import { throwError } from "rxjs";
+} from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Course } from '../model/course';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import * as moment from 'moment';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Component({
-  selector: "course-dialog",
-  templateUrl: "./course-dialog.component.html",
-  styleUrls: ["./course-dialog.component.css"],
+  selector: 'course-dialog',
+  templateUrl: './course-dialog.component.html',
+  styleUrls: ['./course-dialog.component.css'],
 })
 export class CourseDialogComponent implements AfterViewInit {
   form: FormGroup;
@@ -43,6 +43,7 @@ export class CourseDialogComponent implements AfterViewInit {
 
   save() {
     const changes = this.form.value;
+    console.log(changes);
   }
 
   close() {
