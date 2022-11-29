@@ -1,28 +1,25 @@
 {
   "root": true,
-  "overrides": [
-    {
-      "files": ["*.ts"],
-      "extends": [
-     
-        "plugin:prettier/recommended"
-      ]
-    },
-    // NOTE: WE ARE NOT APPLYING PRETTIER IN THIS OVERRIDE, ONLY @ANGULAR-ESLINT/TEMPLATE
-    {
-      "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
-      "rules": {}
-    },
-    // NOTE: WE ARE NOT APPLYING @ANGULAR-ESLINT/TEMPLATE IN THIS OVERRIDE, ONLY PRETTIER
-    {
-      "files": ["*.html"],
-      "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": ["plugin:prettier/recommended"],
-      "rules": {
-        // NOTE: WE ARE OVERRIDING THE DEFAULT CONFIG TO ALWAYS SET THE PARSER TO ANGULAR (SEE BELOW)
-        "prettier/prettier": ["error", { "parser": "angular" }]    
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended", 
+    "prettier", 
+    "plugin:prettier/recommended" 
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020, 
+    "sourceType": "module" 
+  },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "prettier/prettier": [
+      "error",
+      {
+      "endOfLine": "auto"
       }
-    }
-  ]
+    ]
+  }
 }
